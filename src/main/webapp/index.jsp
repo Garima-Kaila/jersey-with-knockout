@@ -1,4 +1,13 @@
+<!DOCTYPE html>
 <html>
+  <head>
+
+      <title>jersey with knockout</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+     </head>
 <body>
 
  <h2>Jersey RESTful Web Application!</h2>
@@ -7,17 +16,17 @@
             for more information on Jersey!   <br><br><br>
 
         <form action="webapi/orders/orderList" method="POST"/>
-        OrderID :  <input type="number" name="orderid"/><br><br>
-        Item ID: <input type="number" name="itemid"/><br><br>
-        Amount:  <input type="number" name="amount"/><br><br>
-        Status: <input type="text" name="status"/><br><br>
-        <input type="Submit" value="Submit"/><br><br><br>
+        OrderID :  <input type="number" name="orderid" class="form-control"/><br><br>
+        Item ID: <input type="number" name="itemid" class="form-control"/><br><br>
+        Amount:  <input type="number" name="amount" class="form-control"/><br><br>
+        Status: <input type="text" name="status" class="form-control"/><br><br>
+        <input type="button" class="btn btn-primary" id="submit" value="Submit"/><br><br><br>
 
 
         <script type = "text/javascript"
         src = "http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
         <script src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-2.2.1.js"></script>
-
+           <script src="js/bootstrap.min.js"></script>
         <script>
             $(document).ready(function () {
                 $("#btnGetOrders").click(function () {
@@ -83,7 +92,7 @@
 
         <div id="div1"><h2>jQuery Text</h2></div>
 
-        <input type="button" id="btnGetOrders" value="Get Order Data"></input>
+        <input type="button" class="btn btn-primary"  id="btnGetOrders" value="Get Order Data"></input>
 
         <table id="table" class="hidden" >
             <tr>
@@ -96,16 +105,16 @@
 
 
         <h3>Post Order Data</h3>
-        Order ID:  <input type="number" data-bind="value:orderId" name="orderid" id="orderid" /><br><br>
-               Item Id:  <input type="number" data-bind="value:itemId" name="itemid" id="itemid" /><br><br>
-               Amount: <input type="number" data-bind="value:amount" name="amount" id="amount" /><br><br>
-               Status:  <input type="text" data-bind="value:status"   name="status" id="status" /><br><br>
-               <input type="button" name="Submit" data-bind="click: addOrder" value="Submit" />
+        Order ID:  <input class="form-control" type="number" data-bind="value:orderId" name="orderid" id="orderid" /><br><br>
+               Item Id:  <input class="form-control" type="number" data-bind="value:itemId" name="itemid" id="itemid" /><br><br>
+               Amount: <input class="form-control" type="number" data-bind="value:amount" name="amount" id="amount" /><br><br>
+               Status:  <input class="form-control" type="text" data-bind="value:status"   name="status" id="status" /><br><br>
+               <input type="button" class="btn btn-primary" name="Submit" data-bind="click: addOrder" value="Submit" />
 
 
 
 <br><br>
-  <table>
+  <table class="table table striped">
       <thead>
           <tr><th>orderId</th>
           <th>itemId</th>
